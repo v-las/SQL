@@ -72,8 +72,7 @@ from Printer
 where price = (
 select max(price)
 from Printer
-)
-
+);
 ```
 1. ```sh
 
