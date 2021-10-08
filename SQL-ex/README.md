@@ -51,7 +51,13 @@ on Product.model = Printer.model
 where Product.maker like '%B%';
 ```
 1. ```sh
-
+select distinct maker
+from Product
+where type in ('PC')
+except
+select distinct maker
+from Product
+where type in ('Laptop');
 ```
 1. ```sh
 
