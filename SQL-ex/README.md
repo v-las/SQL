@@ -32,7 +32,23 @@ on Product.model = Laptop.model
 where Laptop.hd >= 10;
 ```
 1. ```sh
-
+select distinct PC.model, PC.price
+from Product
+inner join PC
+on Product.model = PC.model
+where Product.maker like '%B%'
+union all
+select distinct Laptop.model, Laptop.price
+from Product
+inner join Laptop
+on Product.model = Laptop.model
+where Product.maker like '%B%'
+union all
+select distinct Printer.model, Printer.price
+from Product
+inner join Printer
+on Product.model = Printer.model
+where Product.maker like '%B%';
 ```
 1. ```sh
 
