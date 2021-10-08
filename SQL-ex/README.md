@@ -75,7 +75,8 @@ from Printer
 );
 ```
 1. ```sh
-
+select avg(speed)
+from PC;
 ```
 1. ```sh
 
