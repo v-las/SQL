@@ -83,8 +83,11 @@ select avg(speed) as Avg_speed
 from Laptop
 where price > 1000;
 ```
-1. ```sh
-
+1. ```shselect avg(PC.speed) as Avg_speed
+from PC
+join Product p
+on p.model = PC.model
+where p.maker = 'A';
 ```
 1. ```sh
 
