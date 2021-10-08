@@ -67,6 +67,12 @@ on PC.model = p.model
 where speed >= 450;
 ```
 1. ```sh
+select model, price
+from Printer
+where price = (
+select max(price)
+from Printer
+)
 
 ```
 1. ```sh
