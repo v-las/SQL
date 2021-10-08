@@ -25,7 +25,11 @@ FROM PC
 WHERE price < 600 AND cd = '12x' OR price < 600 AND cd = '24x';
 ```
 1. ```sh
-
+select distinct Product.maker, Laptop.speed
+from Laptop
+inner join Product
+on Product.model = Laptop.model
+where Laptop.hd >= 10;
 ```
 1. ```sh
 
