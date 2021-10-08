@@ -97,5 +97,8 @@ on Classes.class = Ships.class
 where numGuns >= 10;
 ```
 1. ```sh
-
+select hd
+from PC
+group by hd
+having count(model) > 1;
 ```
