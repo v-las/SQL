@@ -1,35 +1,35 @@
 # My solutions for SQL-ex.ru tasks
-1.
+- Task #1
 ```sh
 SELECT model, speed, hd
 FROM PC
 WHERE Price < 500;
 ```
-1.
+- Task #2
 ```sh
 SELECT DISTINCT maker
 FROM Product
 WHERE type = 'Printer';
 ```
-1.
+- Task #3
 ```sh
 SELECT model, ram, screen
 FROM Laptop
 WHERE price > 1000;
 ```
-1.
+- Task #4
 ```sh
 SELECT *
 FROM Printer
 WHERE color = 'y';
 ```
-1.
+- Task #5
 ```sh
 SELECT model, speed, hd
 FROM PC
 WHERE price < 600 AND cd = '12x' OR price < 600 AND cd = '24x';
 ```
-1.
+- Task #6
 ```sh
 SELECT DISTINCT Product.maker, Laptop.speed
 FROM Laptop
@@ -37,7 +37,7 @@ JOIN Product
 ON Product.model = Laptop.model
 WHERE Laptop.hd >= 10;
 ```
-1.
+- Task #7
 ```sh
 SELECT DISTINCT PC.model, PC.price
 FROM Product
@@ -57,7 +57,7 @@ JOIN Printer
 ON Product.model = Printer.model
 WHERE Product.maker LIKE '%B%';
 ```
-1.
+- Task #8
 ```sh
 SELECT DISTINCT maker
 FROM Product
@@ -67,7 +67,7 @@ SELECT DISTINCT maker
 FROM Product
 WHERE type in ('Laptop');
 ```
-1.
+- Task #9
 ```sh
 SELECT DISTINCT maker
 FROM Product p
@@ -75,7 +75,7 @@ JOIN PC
 ON PC.model = p.model
 WHERE speed >= 450;
 ```
-1.
+- Task #10
 ```sh
 SELECT model, price
 FROM Printer
@@ -84,18 +84,18 @@ SELECT MAX(price)
 FROM Printer
 );
 ```
-1.
+- Task #11
 ```sh
 SELECT AVG(speed)
 FROM PC;
 ```
-1.
+- Task #12
 ```sh
 SELECT AVG(speed) as AVG_speed
 FROM Laptop
 WHERE price > 1000;
 ```
-1.
+- Task #13
 ```sh
 SELECT AVG(PC.speed) as AVG_speed
 FROM PC
@@ -103,7 +103,7 @@ JOIN Product p
 ON p.model = PC.model
 WHERE p.maker = 'A';
 ```
-1.
+- Task #14
 ```sh
 SELECT Classes.class, Ships.name, Classes.country
 FROM Classes
@@ -111,7 +111,7 @@ JOIN Ships
 ON Classes.class = Ships.class
 WHERE numGuns >= 10;
 ```
-1.
+- Task #15
 ```sh
 SELECT hd
 FROM PC
