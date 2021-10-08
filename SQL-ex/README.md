@@ -25,80 +25,81 @@ FROM PC
 WHERE price < 600 AND cd = '12x' OR price < 600 AND cd = '24x';
 ```
 1. ```sh
-select distinct Product.maker, Laptop.speed
-from Laptop
-inner join Product
-on Product.model = Laptop.model
-where Laptop.hd >= 10;
+SELECT DISTINCT Product.maker, Laptop.speed
+FROM Laptop
+JOIN Product
+ON Product.model = Laptop.model
+WHERE Laptop.hd >= 10;
 ```
 1. ```sh
-select distinct PC.model, PC.price
-from Product
-inner join PC
-on Product.model = PC.model
-where Product.maker like '%B%'
-union all
-select distinct Laptop.model, Laptop.price
-from Product
-inner join Laptop
-on Product.model = Laptop.model
-where Product.maker like '%B%'
-union all
-select distinct Printer.model, Printer.price
-from Product
-inner join Printer
-on Product.model = Printer.model
-where Product.maker like '%B%';
+SELECT DISTINCT PC.model, PC.price
+FROM Product
+JOIN PC
+ON Product.model = PC.model
+WHERE Product.maker LIKE '%B%'
+UNION ALL
+SELECT DISTINCT Laptop.model, Laptop.price
+FROM Product
+JOIN Laptop
+ON Product.model = Laptop.model
+WHERE Product.maker LIKE '%B%'
+UNION ALL
+SELECT DISTINCT Printer.model, Printer.price
+FROM Product
+JOIN Printer
+ON Product.model = Printer.model
+WHERE Product.maker LIKE '%B%';
 ```
 1. ```sh
-select distinct maker
-from Product
-where type in ('PC')
-except
-select distinct maker
-from Product
-where type in ('Laptop');
+SELECT DISTINCT maker
+FROM Product
+WHERE type in ('PC')
+EXCEPT
+SELECT DISTINCT maker
+FROM Product
+WHERE type in ('Laptop');
 ```
 1. ```sh
-select distinct maker
-from Product p
-join PC
-on PC.model = p.model
-where speed >= 450;
+SELECT DISTINCT maker
+FROM Product p
+JOIN PC
+ON PC.model = p.model
+WHERE speed >= 450;
 ```
 1. ```sh
-select model, price
-from Printer
-where price = (
-select max(price)
-from Printer
+SELECT model, price
+FROM Printer
+WHERE price = (
+SELECT MAX(price)
+FROM Printer
 );
 ```
 1. ```sh
-select avg(speed)
-from PC;
+SELECT AVG(speed)
+FROM PC;
 ```
 1. ```sh
-select avg(speed) as Avg_speed
-from Laptop
-where price > 1000;
-```
-1. ```shselect avg(PC.speed) as Avg_speed
-from PC
-join Product p
-on p.model = PC.model
-where p.maker = 'A';
+SELECT AVG(speed) as AVG_speed
+FROM Laptop
+WHERE price > 1000;
 ```
 1. ```sh
-select Classes.class, Ships.name, Classes.country
-from Classes
-join Ships
-on Classes.class = Ships.class
-where numGuns >= 10;
+SELECT AVG(PC.speed) as AVG_speed
+FROM PC
+JOIN Product p
+ON p.model = PC.model
+WHERE p.maker = 'A';
 ```
 1. ```sh
-select hd
-from PC
-group by hd
-having count(model) > 1;
+SELECT Classes.class, Ships.name, Classes.country
+FROM Classes
+JOIN Ships
+ON Classes.class = Ships.class
+WHERE numGuns >= 10;
+```
+1. ```sh
+SELECT hd
+FROM PC
+GROUP by hd
+HAVING COUNT(model) > 1;
 ```
