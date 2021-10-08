@@ -79,7 +79,9 @@ select avg(speed)
 from PC;
 ```
 1. ```sh
-
+select avg(speed) as Avg_speed
+from Laptop
+where price > 1000;
 ```
 1. ```sh
 
