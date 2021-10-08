@@ -90,7 +90,11 @@ on p.model = PC.model
 where p.maker = 'A';
 ```
 1. ```sh
-
+select Classes.class, Ships.name, Classes.country
+from Classes
+join Ships
+on Classes.class = Ships.class
+where numGuns >= 10;
 ```
 1. ```sh
 
