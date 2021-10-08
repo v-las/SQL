@@ -15,7 +15,9 @@ FROM Laptop
 WHERE price > 1000;
 ```
 1. ```sh
-
+SELECT *
+FROM Printer
+WHERE color = 'y';
 ```
 1. ```sh
 
