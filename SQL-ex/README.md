@@ -60,7 +60,11 @@ from Product
 where type in ('Laptop');
 ```
 1. ```sh
-
+select distinct maker
+from Product p
+join PC
+on PC.model = p.model
+where speed >= 450;
 ```
 1. ```sh
 
