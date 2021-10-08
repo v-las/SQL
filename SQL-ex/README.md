@@ -20,7 +20,9 @@ FROM Printer
 WHERE color = 'y';
 ```
 1. ```sh
-
+SELECT model, speed, hd
+FROM PC
+WHERE price < 600 AND cd = '12x' OR price < 600 AND cd = '24x';
 ```
 1. ```sh
 
