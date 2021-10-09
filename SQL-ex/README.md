@@ -171,12 +171,18 @@ JOIN PC
 ON Product.model = PC.model
 GROUP BY maker;
 ```
-- Task #
+- Task #22
 ```sh
-
+SELECT speed, AVG(price) AS Avg_price
+FROM PC
+WHERE speed > 600
+GROUP BY speed;
 ```
 - Task #
 ```sh
 
 ```
+- Task #
+```sh
 
+```
