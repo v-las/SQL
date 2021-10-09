@@ -134,12 +134,24 @@ SELECT speed
 FROM PC
 );
 ```
-- Task #
+- Task #18
 ```sh
-
+SELECT DISTINCT Product.maker, Printer.price
+FROM Product
+JOIN Printer
+ON Printer.model = Product.model
+WHERE Printer.color = 'y'
+AND Printer.price = (
+SELECT MIN(price)
+FROM Printer
+WHERE Printer.color = 'y'
+);
 ```
 - Task #
 ```sh
 
 ```
+- Task #
+```sh
 
+```
