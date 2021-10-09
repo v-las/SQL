@@ -155,6 +155,14 @@ JOIN Laptop
 ON Product.model = Laptop.model
 GROUP BY Product.maker;
 ```
+- Task #20
+```sh
+SELECT Product.maker, COUNT(Product.model) AS Count_Model
+FROM Product
+WHERE type = 'PC'
+GROUP BY Product.maker
+HAVING COUNT(Product.model) >= 3;
+```
 - Task #
 ```sh
 
