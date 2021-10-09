@@ -124,14 +124,22 @@ SELECT DISTINCT A.model, B.model, A.speed, A.ram
 FROM PC as A, PC B
 WHERE A.model > B.model AND A.ram = B.ram AND A.speed = B.speed;
 ```
-- Task #
+- Task #17
 ```sh
-
-
+SELECT DISTINCT Product.type, Laptop.model, Laptop.speed
+FROM Product, Laptop
+WHERE Product.type = 'Laptop'
+AND Laptop.speed < ALL (
+SELECT speed
+FROM PC
+);
 ```
 - Task #
 ```sh
 
+```
+- Task #
+```sh
 
 ```
 
