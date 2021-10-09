@@ -147,6 +147,14 @@ FROM Printer
 WHERE Printer.color = 'y'
 );
 ```
+- Task #19
+```sh
+SELECT DISTINCT Product.maker, AVG(Laptop.screen) AS Avg_screen
+FROM Product
+JOIN Laptop
+ON Product.model = Laptop.model
+GROUP BY Product.maker;
+```
 - Task #
 ```sh
 
