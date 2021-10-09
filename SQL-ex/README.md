@@ -163,11 +163,20 @@ WHERE type = 'PC'
 GROUP BY Product.maker
 HAVING COUNT(Product.model) >= 3;
 ```
-- Task #
+- Task #21
 ```sh
-
+SELECT maker, MAX(price) AS Max_price
+FROM Product
+JOIN PC
+ON Product.model = PC.model
+GROUP BY maker;
 ```
 - Task #
 ```sh
 
 ```
+- Task #
+```sh
+
+```
+
