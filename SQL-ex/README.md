@@ -118,3 +118,20 @@ FROM PC
 GROUP by hd
 HAVING COUNT(model) > 1;
 ```
+- Task #16
+```sh
+SELECT DISTINCT A.model, B.model, A.speed, A.ram
+FROM PC as A, PC B
+WHERE A.model > B.model AND A.ram = B.ram AND A.speed = B.speed;
+```
+- Task #
+```sh
+
+
+```
+- Task #
+```sh
+
+
+```
+
