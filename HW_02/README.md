@@ -32,7 +32,14 @@ on employees.id = employees_salary.employee_id
 where employees.employee_name is null;
 ```
 4. Вывести все зарплатные позиции  меньше 2000 но работник по ним не назначен. (ЗП есть, но не понятно кто её получает.)
-
+```sh
+select employees_salary.monthly_salary 
+from employees
+right join employees_salary
+on employees.id = employees_salary.employee_id
+where employees.employee_name is null
+and employees_salary.monthly_salary < 2000;
+```
 5. Найти всех работников кому не начислена ЗП.
 
 6. Вывести всех работников с названиями их должности.
