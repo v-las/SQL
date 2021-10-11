@@ -79,19 +79,19 @@ right join employees_salary
 on employees.id = employees_salary.employee_id
 where employees.employee_name is null;
 ```
-|monthly_salary
-|--------------
-|         1,700
-|         1,700
-|         2,700
-|         2,300
-|         2,300
-|         1,300
-|         3,000
-|         1,500
-|         1,900
-|         2,000
-|         7,000
+|monthly_salary|
+|--------------|
+|         1,700|
+|         1,700|
+|         2,700|
+|         2,300|
+|         2,300|
+|         1,300|
+|         3,000|
+|         1,500|
+|         1,900|
+|         2,000|
+|         7,000|
 *Всего* | **
 4. Вывести все зарплатные позиции  меньше 2000 но работник по ним не назначен. (ЗП есть, но не понятно кто её получает.)
 ```sh
@@ -102,13 +102,13 @@ on employees.id = employees_salary.employee_id
 where employees.employee_name is null
 and employees_salary.monthly_salary < 2000;
 ```
-|monthly_salary
-|--------------
-|         1,700
-|         1,700
-|         1,300
+|monthly_salary|
+|--------------|
+|         1,700|
+|         1,700|
+|         1,300|
 |         1,500
-|         1,900
+|         1,900|
 *Всего* | *5*
 5. Найти всех работников кому не начислена ЗП.
 ```sh
@@ -461,10 +461,10 @@ join roles
 on role_id = roles.id
 where role_name like '%Junior%' and role_name like'%QA%';
 ```
-|monthly_salary
-|--------------
-|          1400
-|          1750
+|monthly_salary|
+|--------------|
+|          1400|
+|          1750|
 *Всего* | *2*
 21. Вывести среднюю зарплату всех Junior специалистов
 ```sh
@@ -478,10 +478,10 @@ join roles
 on role_id = roles.id
 where role_name like '%Junior%';
 ```
-|avg                  
-|---------------------
-|1360.0000000000000000
-*Всего* | *1*
+|avg                  |
+|---------------------|
+|1360.0000000000000000|
+*Всего* | *1*|
 22. Вывести сумму зарплат JS разработчиков
 ```sh
 select sum(monthly_salary)
@@ -491,9 +491,9 @@ and roles_employees.employee_id = employees.id
 and role_id = roles.id
 and role_name like '%JavaS%';
 ```
-|sum   
-|------
-|  2550
+|sum   |
+|------|
+|  2550|
 *Всего* | *1*
 23. Вывести минимальную ЗП QA инженеров
 ```sh
@@ -504,9 +504,9 @@ and roles_employees.employee_id = employees.id
 and role_id = roles.id
 and role_name like '%QA%';
 ```
-|min   
-|------
-|   900
+|min   |
+|------|
+|   900|
 *Всего* | *1*
 24. Вывести максимальную ЗП QA инженеров
 ```sh
@@ -517,9 +517,9 @@ and roles_employees.employee_id = employees.id
 and role_id = roles.id
 and role_name like '%QA%';
 ```
-|max   
-|------
-|  1850
+|max   |
+|------|
+|  1850|
 *Всего* | *1*
 25. Вывести количество QA инженеров
 ```sh
@@ -533,9 +533,9 @@ full join roles
 on role_id = roles.id
 where role_name like '%QA%';
 ```
-|count 
-|------
-|    13
+|count |
+|------|
+|    13|
 *Всего* | *1*
 26. Вывести количество Middle специалистов.
 ```sh
@@ -549,9 +549,9 @@ full join roles
 on role_id = roles.id
 where role_name like '%Middle%';
 ```
-|count 
-|------
-|     9
+|count |
+|------|
+|     9|
 *Всего* | *1*
 27. Вывести количество разработчиков
 ```sh
@@ -565,9 +565,9 @@ full join roles
 on role_id = roles.id
 where role_name like '%developer%';
 ```
-|count 
-|------
-|    17
+|count |
+|------|
+|    17|
 *Всего* | *1*
 28. Вывести фонд (сумму) зарплаты разработчиков.
 ```sh
@@ -581,9 +581,9 @@ full join roles
 on role_id = roles.id
 where role_name like '%developer%';
 ```
-|sum   
-|------
-| 10800
+|sum   |
+|------|
+| 10800|
 *Всего* | *1*
 29. Вывести имена, должности и ЗП всех специалистов по возрастанию
 ```sh
