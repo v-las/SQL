@@ -79,6 +79,8 @@ right join employees_salary
 on employees.id = employees_salary.employee_id
 where employees.employee_name is null;
 ```
+
+*Всего* | **
 4. Вывести все зарплатные позиции  меньше 2000 но работник по ним не назначен. (ЗП есть, но не понятно кто её получает.)
 ```sh
 select employees_salary.monthly_salary 
@@ -88,6 +90,8 @@ on employees.id = employees_salary.employee_id
 where employees.employee_name is null
 and employees_salary.monthly_salary < 2000;
 ```
+
+*Всего* | **
 5. Найти всех работников кому не начислена ЗП.
 ```sh
 select employees.employee_name, employees_salary.monthly_salary 
@@ -96,6 +100,8 @@ left join employees_salary
 on employees.id = employees_salary.employee_id
 where employees_salary.monthly_salary is null;
 ```
+
+*Всего* | **
 6. Вывести всех работников с названиями их должности.
 ```sh
 select employee_name, role_name
@@ -105,6 +111,8 @@ on roles_employees.employee_id = employees.id
 join roles
 on roles_employees.role_id = roles.id;
 ```
+
+*Всего* | **
 7. Вывести имена и должность только Java разработчиков.
 ```sh
 select employee_name, role_name
@@ -116,6 +124,8 @@ on roles_employees.role_id = roles.id
 where role_name like '%Java %'
 ;
 ```
+
+*Всего* | **
 8. Вывести имена и должность только Python разработчиков.
 ```sh
 select employee_name, role_name
@@ -127,6 +137,8 @@ on roles_employees.role_id = roles.id
 where role_name like '%Python %'
 ;
 ```
+
+*Всего* | **
 9. Вывести имена и должность всех QA инженеров.
 ```sh
 select employee_name, role_name
@@ -138,6 +150,8 @@ on roles_employees.role_id = roles.id
 where role_name like '%QA%'
 ;
 ```
+
+*Всего* | **
 10. Вывести имена и должность ручных QA инженеров.
 ```sh
 select employee_name, role_name
@@ -149,6 +163,8 @@ on roles_employees.role_id = roles.id
 where role_name like '%Manual QA%'
 ;
 ```
+
+*Всего* | **
 11. Вывести имена и должность автоматизаторов QA
 ```sh
 select employee_name, role_name
@@ -160,6 +176,8 @@ on roles_employees.role_id = roles.id
 where role_name like '%Automation QA%'
 ;
 ```
+
+*Всего* | **
 12. Вывести имена и зарплаты Junior специалистов
 ```sh
 select employee_name, monthly_salary
@@ -173,6 +191,8 @@ on role_id = roles.id
 where role_name like '%Junior%'
 ;
 ```
+
+*Всего* | **
 13. Вывести имена и зарплаты Middle специалистов
 ```sh
 select employee_name, monthly_salary
@@ -186,6 +206,8 @@ on role_id = roles.id
 where role_name like '%Middle%'
 ;
 ```
+
+*Всего* | **
 14. Вывести имена и зарплаты Senior специалистов
 ```sh
 select employee_name, monthly_salary
@@ -199,6 +221,8 @@ on role_id = roles.id
 where role_name like '%Senior%'
 ;
 ```
+
+*Всего* | **
 15. Вывести зарплаты Java разработчиков
 ```sh
 select monthly_salary, role_name
@@ -212,6 +236,8 @@ on role_id = roles.id
 where role_name like '%Java %'
 ;
 ```
+
+*Всего* | **
 16. Вывести зарплаты Python разработчиков
 ```sh
 select monthly_salary, role_name
@@ -225,6 +251,8 @@ on role_id = roles.id
 where role_name like '%Python%'
 ;
 ```
+
+*Всего* | **
 17. Вывести имена и зарплаты Junior Python разработчиков
 ```sh
 select employee_name, monthly_salary
@@ -238,6 +266,8 @@ on role_id = roles.id
 where role_name like '%Junior Python%'
 ;
 ```
+
+*Всего* | **
 18. Вывести имена и зарплаты Middle JS разработчиков
 ```sh
 select employee_name, monthly_salary
@@ -251,6 +281,8 @@ on role_id = roles.id
 where role_name like '%Middle JavaS%'
 ;
 ```
+
+*Всего* | **
 19. Вывести имена и зарплаты Senior Java разработчиков
 ```sh
 select employee_name, monthly_salary
@@ -264,6 +296,8 @@ on role_id = roles.id
 where role_name like '%Middle%' and role_name like'%JavaS%'
 ;
 ```
+
+*Всего* | **
 20. Вывести зарплаты Junior QA инженеров
 ```sh
 select monthly_salary
@@ -277,6 +311,8 @@ on role_id = roles.id
 where role_name like '%Junior%' and role_name like'%QA%'
 ;
 ```
+
+*Всего* | **
 21. Вывести среднюю зарплату всех Junior специалистов
 ```sh
 select avg(monthly_salary)
@@ -290,6 +326,8 @@ on role_id = roles.id
 where role_name like '%Junior%'
 ;
 ```
+
+*Всего* | **
 22. Вывести сумму зарплат JS разработчиков
 ```sh
 select sum(monthly_salary)
@@ -300,6 +338,8 @@ and role_id = roles.id
 and role_name like '%JavaS%'
 ;
 ```
+
+*Всего* | **
 23. Вывести минимальную ЗП QA инженеров
 ```sh
 select min(monthly_salary)
@@ -310,6 +350,8 @@ and role_id = roles.id
 and role_name like '%QA%'
 ;
 ```
+
+*Всего* | **
 24. Вывести максимальную ЗП QA инженеров
 ```sh
 select max(monthly_salary)
@@ -320,6 +362,8 @@ and role_id = roles.id
 and role_name like '%QA%'
 ;
 ```
+
+*Всего* | **
 25. Вывести количество QA инженеров
 ```sh
 select count(employee_name)
@@ -333,6 +377,8 @@ on role_id = roles.id
 where role_name like '%QA%'
 ;
 ```
+
+*Всего* | **
 26. Вывести количество Middle специалистов.
 ```sh
 select count(employee_name)
@@ -346,6 +392,8 @@ on role_id = roles.id
 where role_name like '%Middle%'
 ;
 ```
+
+*Всего* | **
 27. Вывести количество разработчиков
 ```sh
 select count(employee_name)
@@ -359,6 +407,8 @@ on role_id = roles.id
 where role_name like '%developer%'
 ;
 ```
+
+*Всего* | **
 28. Вывести фонд (сумму) зарплаты разработчиков.
 ```sh
 select sum(monthly_salary)
@@ -372,6 +422,8 @@ on role_id = roles.id
 where role_name like '%developer%'
 ;
 ```
+
+*Всего* | **
 29. Вывести имена, должности и ЗП всех специалистов по возрастанию
 ```sh
 select employee_name, role_name, monthly_salary
@@ -385,6 +437,8 @@ on role_id = roles.id
 order by employee_name
 ;
 ```
+
+*Всего* | **
 30. Вывести имена, должности и ЗП всех специалистов по возрастанию у специалистов у которых ЗП от 1700 до 2300
 ```sh
 select employee_name, role_name, monthly_salary
@@ -399,6 +453,8 @@ where monthly_salary between 1700 and 2300
 order by employee_name
 ;
 ```
+
+*Всего* | **
 31. Вывести имена, должности и ЗП всех специалистов по возрастанию у специалистов у которых ЗП меньше 2300
 ```sh
 select employee_name, role_name, monthly_salary
@@ -413,6 +469,8 @@ where monthly_salary < 2300
 order by monthly_salary
 ;
 ```
+
+*Всего* | **
 32. Вывести имена, должности и ЗП всех специалистов по возрастанию у специалистов у которых ЗП равна 1100, 1500, 2000
 ```sh
 select employee_name, role_name, monthly_salary
@@ -427,3 +485,11 @@ where monthly_salary in (1100, 1500, 2000)
 order by monthly_salary
 ;
 ```
+employee_name|role_name                |monthly_salary|
+-------------|-------------------------|--------------|
+Victor       |Junior Java developer    |          1100|
+Leo          |Senior Manual QA engineer|          1100|
+Elena        |Designer                 |          1500|
+Milana       |                         |          1500|
+Luna         |Designer                 |          2000|
+*Всего* | *5*
