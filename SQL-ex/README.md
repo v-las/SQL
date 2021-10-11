@@ -192,6 +192,25 @@ JOIN Laptop
 ON Product.model = Laptop.model
 WHERE speed >= 750;
 ```
+- Task #24
+```sh
+WITH i AS (
+SELECT model, price
+FROM PC
+UNION 
+SELECT model, price
+FROM Laptop
+UNION 
+SELECT model, price
+FROM Printer
+)
+SELECT model
+FROM i
+WHERE price = ALL (
+SELECT max(price)
+FROM i
+);
+```
 - Task #
 ```sh
 
