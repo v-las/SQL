@@ -5,7 +5,7 @@ Host: 159.69.151.133
 Port: 5056
 DB: qa_db_2
 User: user_22_x
-Pass: *****
+Pass: * ** **
 ```
 ---
 1. Вывести всех работников чьи зарплаты есть в базе, вместе с зарплатами.
@@ -92,7 +92,7 @@ where employees.employee_name is null;
 |         1,900|
 |         2,000|
 |         7,000|
-*Всего* | **
+*Всего* *11* | 
 4. Вывести все зарплатные позиции  меньше 2000 но работник по ним не назначен. (ЗП есть, но не понятно кто её получает.)
 ```sh
 select employees_salary.monthly_salary 
@@ -107,9 +107,9 @@ and employees_salary.monthly_salary < 2000;
 |         1,700|
 |         1,700|
 |         1,300|
-|         1,500
+|         1,500|
 |         1,900|
-*Всего* | *5*
+*Всего* *5* | 
 5. Найти всех работников кому не начислена ЗП.
 ```sh
 select employees.employee_name, employees_salary.monthly_salary 
@@ -465,7 +465,7 @@ where role_name like '%Junior%' and role_name like'%QA%';
 |--------------|
 |          1400|
 |          1750|
-*Всего* | *2*
+*Всего* *2* | 
 21. Вывести среднюю зарплату всех Junior специалистов
 ```sh
 select avg(monthly_salary)
@@ -481,7 +481,7 @@ where role_name like '%Junior%';
 |avg                  |
 |---------------------|
 |1360.0000000000000000|
-*Всего* | *1*|
+*Всего* *1* | 
 22. Вывести сумму зарплат JS разработчиков
 ```sh
 select sum(monthly_salary)
@@ -494,7 +494,7 @@ and role_name like '%JavaS%';
 |sum   |
 |------|
 |  2550|
-*Всего* | *1*
+*Всего* *1* | 
 23. Вывести минимальную ЗП QA инженеров
 ```sh
 select min(monthly_salary)
@@ -507,7 +507,7 @@ and role_name like '%QA%';
 |min   |
 |------|
 |   900|
-*Всего* | *1*
+*Всего* *1* | 
 24. Вывести максимальную ЗП QA инженеров
 ```sh
 select max(monthly_salary)
@@ -520,7 +520,7 @@ and role_name like '%QA%';
 |max   |
 |------|
 |  1850|
-*Всего* | *1*
+*Всего* *1* | 
 25. Вывести количество QA инженеров
 ```sh
 select count(employee_name)
@@ -536,7 +536,7 @@ where role_name like '%QA%';
 |count |
 |------|
 |    13|
-*Всего* | *1*
+*Всего* *1* | 
 26. Вывести количество Middle специалистов.
 ```sh
 select count(employee_name)
@@ -552,7 +552,7 @@ where role_name like '%Middle%';
 |count |
 |------|
 |     9|
-*Всего* | *1*
+*Всего* *1* | 
 27. Вывести количество разработчиков
 ```sh
 select count(employee_name)
@@ -568,7 +568,7 @@ where role_name like '%developer%';
 |count |
 |------|
 |    17|
-*Всего* | *1*
+*Всего* *1* | 
 28. Вывести фонд (сумму) зарплаты разработчиков.
 ```sh
 select sum(monthly_salary)
@@ -584,7 +584,7 @@ where role_name like '%developer%';
 |sum   |
 |------|
 | 10800|
-*Всего* | *1*
+*Всего* *1* |
 29. Вывести имена, должности и ЗП всех специалистов по возрастанию
 ```sh
 select employee_name, role_name, monthly_salary
