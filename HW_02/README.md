@@ -59,7 +59,14 @@ on roles_employees.role_id = roles.id;
 ```
 7. Вывести имена и должность только Java разработчиков.
 ```sh
-
+select employee_name, role_name
+from roles_employees
+join employees
+on roles_employees.employee_id = employees.id
+join roles
+on roles_employees.role_id = roles.id
+where role_name like '%Java %'
+;
 ```
 8. Вывести имена и должность только Python разработчиков.
 ```sh
