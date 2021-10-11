@@ -16,32 +16,32 @@ join employees_salary
 on employees.id = employees_salary.employee_id
 ;
 ```
-employee_name | monthly_salary
- --- | ---
-Dmitry | 2300
-Elena | 1500
-Alex | 1000
-Victor | 1100
-Elena | 2100
-Anna | 1400
-Milana | 1500
-Olga | 1700
-Sergey | 1750
-Vadim	 | 1750
-Anton	 | 1850
-James	 | 1850
-Luna	 | 2000
-Aria	 | 2200
-Valentina	 | 2800
-Henry	 | 4100
-Oliver	 | 700
-David	 | 1000
-Luke	 | 900
-Leo	 | 1100
-Scarlett	 | 1200
-Penelope	 | 1600
-Nora	 | 1620
-Lily	 | 2350
+ employee_name | monthly_salary 
+---------------|----------------
+ Dmitry        |          2,300 
+ Elena         |          1,500 
+ Alex          |          1,000 
+ Victor        |          1,100 
+ Elena         |          2,100 
+ Anna          |          1,400 
+ Milana        |          1,500 
+ Olga          |          1,700 
+ Sergey        |          1,750 
+ Vadim         |          1,750 
+ Anton         |          1,850 
+ James         |          1,850 
+ Luna          |          2,000 
+ Aria          |          2,200 
+ Valentina     |          2,800 
+ Henry         |          4,100 
+ Oliver        |            700 
+ David         |          1,000 
+ Luke          |            900 
+ Leo           |          1,100 
+ Scarlett      |          1,200 
+ Penelope      |          1,600 
+ Nora          |          1,620 
+ Lily          |          2,350 
 *Всего* | *24*
 2. Вывести всех работников у которых ЗП меньше 2000.
 ```sh
@@ -51,25 +51,25 @@ join employees_salary
 on employees.id = employees_salary.employee_id 
 where employees_salary.monthly_salary < 2000;
 ```
-employee_name|monthly_salary|
--------------+--------------+
-Elena        |          1500|
-Alex         |          1000|
-Victor       |          1100|
-Anna         |          1400|
-Milana       |          1500|
-Olga         |          1700|
-Sergey       |          1750|
-Vadim        |          1750|
-Anton        |          1850|
-James        |          1850|
-Oliver       |           700|
-David        |          1000|
-Luke         |           900|
-Leo          |          1100|
-Scarlett     |          1200|
-Penelope     |          1600|
-Nora         |          1620|
+employee_name|monthly_salary
+-------------|--------------
+Elena        |         1,500
+Alex         |         1,000
+Victor       |         1,100
+Anna         |         1,400
+Milana       |         1,500
+Olga         |         1,700
+Sergey       |         1,750
+Vadim        |         1,750
+Anton        |         1,850
+James        |         1,850
+Oliver       |           700
+David        |         1,000
+Luke         |           900
+Leo          |         1,100
+Scarlett     |         1,200
+Penelope     |         1,600
+Nora         |         1,620
 *Всего* | *17*
 3. Вывести все зарплатные позиции, но работник по ним не назначен. (ЗП есть, но не понятно кто её получает.)
 ```sh
@@ -79,8 +79,33 @@ right join employees_salary
 on employees.id = employees_salary.employee_id
 where employees.employee_name is null;
 ```
-
+monthly_salary|
+--------------+
+         1,700|
+         1,700|
+         2,700|
+         2,300|
+         2,300|
+         1,300|
+         3,000|
+         1,500|
+         1,900|
+         2,000|
+         7,000|
 *Всего* | **
+|monthly_salary
++--------------
+|         1,700
+|         1,700
+|         2,700
+|         2,300
+|         2,300
+|         1,300
+|         3,000
+|         1,500
+|         1,900
+|         2,000
+|         7,000
 4. Вывести все зарплатные позиции  меньше 2000 но работник по ним не назначен. (ЗП есть, но не понятно кто её получает.)
 ```sh
 select employees_salary.monthly_salary 
@@ -437,8 +462,62 @@ on role_id = roles.id
 order by employee_name
 ;
 ```
-
-*Всего* | **
+ employee_name | role_name                     | monthly_salary 
+---------------|-------------------------------|----------------
+ Alex          | Middle Python developer       |          1,000 
+ Alexander     | Middle JavaScript developer   |         [NULL] 
+ Alice         | [NULL]                        |         [NULL] 
+ Allison       | [NULL]                        |         [NULL] 
+ Andrey        | Senior Python developer       |         [NULL] 
+ Anna          | Junior Manual QA engineer     |          1,400 
+ Anton         | Middle Manual QA engineer     |          1,850 
+ Anton         | Junior Java developer         |         [NULL] 
+ Aria          | Designer                      |          2,200 
+ Bella         | [NULL]                        |         [NULL] 
+ Clara         | [NULL]                        |         [NULL] 
+ David         | Middle Manual QA engineer     |          1,000 
+ Dmitry        | Senior Python developer       |          2,300 
+ Dominic       | [NULL]                        |         [NULL] 
+ Elena         | Senior Java developer         |          2,100 
+ Elena         | Designer                      |          1,500 
+ Ellie         | Junior Automation QA engineer |         [NULL] 
+ Erik          | Senior Manual QA engineer     |         [NULL] 
+ Eva           | [NULL]                        |         [NULL] 
+ George        | Senior Java developer         |         [NULL] 
+ Henry         | CEO                           |          4,100 
+ Jack          | Junior Manual QA engineer     |         [NULL] 
+ Jacob         | Senior JavaScript developer   |         [NULL] 
+ James         | Junior JavaScript developer   |          1,850 
+ Jordan        | [NULL]                        |         [NULL] 
+ Leo           | Senior Manual QA engineer     |          1,100 
+ Leonardo      | [NULL]                        |         [NULL] 
+ Lily          | Sales manager                 |          2,350 
+ Lucas         | Junior JavaScript developer   |         [NULL] 
+ Lucy          | Senior Automation QA engineer |         [NULL] 
+ Luke          | Senior Manual QA engineer     |            900 
+ Luna          | Designer                      |          2,000 
+ Marcus        | Project Manager               |         [NULL] 
+ Matthew       | Middle Manual QA engineer     |         [NULL] 
+ Max           | Senior Java developer         |         [NULL] 
+ Maya          | Senior JavaScript developer   |         [NULL] 
+ Milana        | [NULL]                        |          1,500 
+ Naomi         | [NULL]                        |         [NULL] 
+ Nora          | Sales manager                 |          1,620 
+ Olga          | [NULL]                        |          1,700 
+ Oliver        | Junior JavaScript developer   |            700 
+ Penelope      | HR                            |          1,600 
+ Samantha      | [NULL]                        |         [NULL] 
+ Samuel        | Junior Manual QA engineer     |         [NULL] 
+ Scarlett      | HR                            |          1,200 
+ Sergey        | Middle Java developer         |          1,750 
+ Sophia        | Middle JavaScript developer   |         [NULL] 
+ Vadim         | Junior Manual QA engineer     |          1,750 
+ Valentina     | [NULL]                        |          2,800 
+ Vera          | Sales manager                 |         [NULL] 
+ Victor        | Junior Java developer         |          1,100 
+ Victor        | Middle Java developer         |         [NULL] 
+ Violet        | Middle Automation QA engineer |         [NULL] 
+*Всего* | *53*
 30. Вывести имена, должности и ЗП всех специалистов по возрастанию у специалистов у которых ЗП от 1700 до 2300
 ```sh
 select employee_name, role_name, monthly_salary
@@ -453,8 +532,18 @@ where monthly_salary between 1700 and 2300
 order by employee_name
 ;
 ```
-
-*Всего* | **
+ employee_name | role_name                   | monthly_salary 
+---------------|-----------------------------|----------------
+ Anton         | Middle Manual QA engineer   |          1,850 
+ Aria          | Designer                    |          2,200 
+ Dmitry        | Senior Python developer     |          2,300 
+ Elena         | Senior Java developer       |          2,100 
+ James         | Junior JavaScript developer |          1,850 
+ Luna          | Designer                    |          2,000 
+ Olga          | [NULL]                      |          1,700 
+ Sergey        | Middle Java developer       |          1,750 
+ Vadim         | Junior Manual QA engineer   |          1,750 
+*Всего* | *9*
 31. Вывести имена, должности и ЗП всех специалистов по возрастанию у специалистов у которых ЗП меньше 2300
 ```sh
 select employee_name, role_name, monthly_salary
@@ -469,8 +558,29 @@ where monthly_salary < 2300
 order by monthly_salary
 ;
 ```
-
-*Всего* | **
+ employee_name | role_name                   | monthly_salary 
+---------------|-----------------------------|----------------
+ Oliver        | Junior JavaScript developer |            700 
+ Luke          | Senior Manual QA engineer   |            900 
+ Alex          | Middle Python developer     |          1,000 
+ David         | Middle Manual QA engineer   |          1,000 
+ Victor        | Junior Java developer       |          1,100 
+ Leo           | Senior Manual QA engineer   |          1,100 
+ Scarlett      | HR                          |          1,200 
+ Anna          | Junior Manual QA engineer   |          1,400 
+ Elena         | Designer                    |          1,500 
+ Milana        | [NULL]                      |          1,500 
+ Penelope      | HR                          |          1,600 
+ Nora          | Sales manager               |          1,620 
+ Olga          | [NULL]                      |          1,700 
+ Sergey        | Middle Java developer       |          1,750 
+ Vadim         | Junior Manual QA engineer   |          1,750 
+ Anton         | Middle Manual QA engineer   |          1,850 
+ James         | Junior JavaScript developer |          1,850 
+ Luna          | Designer                    |          2,000 
+ Elena         | Senior Java developer       |          2,100 
+ Aria          | Designer                    |          2,200 
+*Всего* | *20*
 32. Вывести имена, должности и ЗП всех специалистов по возрастанию у специалистов у которых ЗП равна 1100, 1500, 2000
 ```sh
 select employee_name, role_name, monthly_salary
@@ -485,11 +595,11 @@ where monthly_salary in (1100, 1500, 2000)
 order by monthly_salary
 ;
 ```
-employee_name|role_name                |monthly_salary|
--------------|-------------------------|--------------|
-Victor       |Junior Java developer    |          1100|
-Leo          |Senior Manual QA engineer|          1100|
-Elena        |Designer                 |          1500|
-Milana       |                         |          1500|
-Luna         |Designer                 |          2000|
+ employee_name | role_name                 | monthly_salary 
+---------------|---------------------------|----------------
+ Victor        | Junior Java developer     |          1,100 
+ Leo           | Senior Manual QA engineer |          1,100 
+ Elena         | Designer                  |          1,500 
+ Milana        | [NULL]                    |          1,500 
+ Luna          | Designer                  |          2,000 
 *Всего* | *5*
