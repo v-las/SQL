@@ -5,7 +5,7 @@ Host: 159.69.151.133
 Port: 5056
 DB: qa_db_2
 User: user_22_x
-Pass: * ** **
+Pass: *****
 ```
 ---
 1. Вывести всех работников чьи зарплаты есть в базе, вместе с зарплатами.
@@ -13,8 +13,7 @@ Pass: * ** **
 select employee_name, monthly_salary 
 from employees
 join employees_salary
-on employees.id = employees_salary.employee_id
-;
+on employees.id = employees_salary.employee_id;
 ```
  employee_name | monthly_salary 
 ---------------|----------------
