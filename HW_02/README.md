@@ -274,15 +274,42 @@ and role_name like '%QA%'
 ```
 25. Вывести количество QA инженеров
 ```sh
-
+select count(employee_name)
+from employees
+full join employees_salary
+on employees_salary.employee_id = employees.id
+full join roles_employees
+on roles_employees.employee_id = employees.id
+full join roles
+on role_id = roles.id
+where role_name like '%QA%'
+;
 ```
 26. Вывести количество Middle специалистов.
 ```sh
-
+select count(employee_name)
+from employees
+full join employees_salary
+on employees_salary.employee_id = employees.id
+full join roles_employees
+on roles_employees.employee_id = employees.id
+full join roles
+on role_id = roles.id
+where role_name like '%Middle%'
+;
 ```
 27. Вывести количество разработчиков
 ```sh
-
+select count(employee_name)
+from employees
+full join employees_salary
+on employees_salary.employee_id = employees.id
+full join roles_employees
+on roles_employees.employee_id = employees.id
+full join roles
+on role_id = roles.id
+where role_name like '%developer%'
+;
 ```
 28. Вывести фонд (сумму) зарплаты разработчиков.
 ```sh
