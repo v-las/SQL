@@ -244,7 +244,13 @@ where role_name like '%Junior%'
 ```
 22. Вывести сумму зарплат JS разработчиков
 ```sh
-
+select sum(monthly_salary)
+from employees, employees_salary, roles_employees, roles
+where employees_salary.employee_id = employees.id
+and roles_employees.employee_id = employees.id
+and role_id = roles.id
+and role_name like '%JavaS%'
+;
 ```
 23. Вывести минимальную ЗП QA инженеров
 ```sh
