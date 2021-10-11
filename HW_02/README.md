@@ -50,7 +50,12 @@ where employees_salary.monthly_salary is null;
 ```
 6. Вывести всех работников с названиями их должности.
 ```sh
-
+select employee_name, role_name
+from roles_employees
+join employees
+on roles_employees.employee_id = employees.id
+join roles
+on roles_employees.role_id = roles.id;
 ```
 7. Вывести имена и должность только Java разработчиков.
 ```sh
