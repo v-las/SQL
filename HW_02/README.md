@@ -13,10 +13,16 @@ Pass: 123
 select employees.employee_name, employees_salary.monthly_salary 
 from employees
 join employees_salary
-on employees.id= employees_salary.employee_id 
+on employees.id= employees_salary.employee_id;
 ``
 2. Вывести всех работников у которых ЗП меньше 2000.
-
+```sh
+select employees.employee_name, employees_salary.monthly_salary 
+from employees
+join employees_salary
+on employees.id= employees_salary.employee_id 
+where employees_salary.monthly_salary < 2000;
+```
 3. Вывести все зарплатные позиции, но работник по ним не назначен. (ЗП есть, но не понятно кто её получает.)
 
 4. Вывести все зарплатные позиции  меньше 2000 но работник по ним не назначен. (ЗП есть, но не понятно кто её получает.)
