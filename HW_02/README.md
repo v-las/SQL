@@ -192,11 +192,29 @@ where role_name like '%Junior Python%'
 ```
 18. Вывести имена и зарплаты Middle JS разработчиков
 ```sh
-
+select employee_name, monthly_salary
+from employees
+full join employees_salary
+on employees_salary.employee_id = employees.id
+full join roles_employees
+on roles_employees.employee_id = employees.id
+full join roles
+on role_id = roles.id
+where role_name like '%Middle JavaS%'
+;
 ```
 19. Вывести имена и зарплаты Senior Java разработчиков
 ```sh
-
+select employee_name, monthly_salary
+from employees
+full join employees_salary
+on employees_salary.employee_id = employees.id
+full join roles_employees
+on roles_employees.employee_id = employees.id
+full join roles
+on role_id = roles.id
+where role_name like '%Middle%' and role_name like'%JavaS%'
+;
 ```
 20. Вывести зарплаты Junior QA инженеров
 ```sh
