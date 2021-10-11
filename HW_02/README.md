@@ -14,7 +14,7 @@ select employees.employee_name, employees_salary.monthly_salary
 from employees
 join employees_salary
 on employees.id = employees_salary.employee_id;
-``
+```
 2. Вывести всех работников у которых ЗП меньше 2000.
 ```sh
 select employees.employee_name, employees_salary.monthly_salary 
