@@ -114,7 +114,14 @@ where role_name like '%Automation QA%'
 ```
 12. Вывести имена и зарплаты Junior специалистов
 ```sh
-
+select employee_name, role_name
+from roles_employees
+join employees
+on roles_employees.employee_id = employees.id
+join roles
+on roles_employees.role_id = roles.id
+where role_name like '%Junior%'
+;
 ```
 13. Вывести имена и зарплаты Middle специалистов
 ```sh
