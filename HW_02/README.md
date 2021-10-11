@@ -80,7 +80,7 @@ on employees.id = employees_salary.employee_id
 where employees.employee_name is null;
 ```
 monthly_salary|
---------------+
+--------------|
          1,700|
          1,700|
          2,700|
@@ -94,7 +94,7 @@ monthly_salary|
          7,000|
 *Всего* | **
 |monthly_salary
-+--------------
+|--------------
 |         1,700
 |         1,700
 |         2,700
