@@ -9,7 +9,12 @@ Pass: 123
 ```
 ===
 1. Вывести всех работников чьи зарплаты есть в базе, вместе с зарплатами.
-
+```sh
+select employees.employee_name, employees_salary.monthly_salary 
+from employees
+join employees_salary
+on employees.id= employees_salary.employee_id 
+``
 2. Вывести всех работников у которых ЗП меньше 2000.
 
 3. Вывести все зарплатные позиции, но работник по ним не назначен. (ЗП есть, но не понятно кто её получает.)
