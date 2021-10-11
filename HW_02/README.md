@@ -70,15 +70,36 @@ where role_name like '%Java %'
 ```
 8. Вывести имена и должность только Python разработчиков.
 ```sh
-
+select employee_name, role_name
+from roles_employees
+join employees
+on roles_employees.employee_id = employees.id
+join roles
+on roles_employees.role_id = roles.id
+where role_name like '%Python %'
+;
 ```
 9. Вывести имена и должность всех QA инженеров.
 ```sh
-
+select employee_name, role_name
+from roles_employees
+join employees
+on roles_employees.employee_id = employees.id
+join roles
+on roles_employees.role_id = roles.id
+where role_name like '%QA%'
+;
 ```
 10. Вывести имена и должность ручных QA инженеров.
 ```sh
-
+select employee_name, role_name
+from roles_employees
+join employees
+on roles_employees.employee_id = employees.id
+join roles
+on roles_employees.role_id = roles.id
+where role_name like '%Manual QA%'
+;
 ```
 11. Вывести имена и должность автоматизаторов QA
 ```sh
