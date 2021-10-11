@@ -218,7 +218,16 @@ where role_name like '%Middle%' and role_name like'%JavaS%'
 ```
 20. Вывести зарплаты Junior QA инженеров
 ```sh
-
+select monthly_salary
+from employees
+join employees_salary
+on employees_salary.employee_id = employees.id
+join roles_employees
+on roles_employees.employee_id = employees.id
+join roles
+on role_id = roles.id
+where role_name like '%Junior%' and role_name like'%QA%'
+;
 ```
 21. Вывести среднюю зарплату всех Junior специалистов
 ```sh
