@@ -5,24 +5,72 @@ Host: 159.69.151.133
 Port: 5056
 DB: qa_db_2
 User: user_22_x
-Pass: 123
+Pass: *****
 ```
-===
+---
 1. Вывести всех работников чьи зарплаты есть в базе, вместе с зарплатами.
 ```sh
-select employees.employee_name, employees_salary.monthly_salary 
+select employee_name, monthly_salary 
 from employees
 join employees_salary
-on employees.id = employees_salary.employee_id;
+on employees.id = employees_salary.employee_id
+;
 ```
+employee_name | monthly_salary
+ --- | ---
+Dmitry | 2300
+Elena | 1500
+Alex | 1000
+Victor | 1100
+Elena | 2100
+Anna | 1400
+Milana | 1500
+Olga | 1700
+Sergey | 1750
+Vadim	 | 1750
+Anton	 | 1850
+James	 | 1850
+Luna	 | 2000
+Aria	 | 2200
+Valentina	 | 2800
+Henry	 | 4100
+Oliver	 | 700
+David	 | 1000
+Luke	 | 900
+Leo	 | 1100
+Scarlett	 | 1200
+Penelope	 | 1600
+Nora	 | 1620
+Lily	 | 2350
+*Всего* | *24*
 2. Вывести всех работников у которых ЗП меньше 2000.
 ```sh
-select employees.employee_name, employees_salary.monthly_salary 
+select employee_name, monthly_salary 
 from employees
 join employees_salary
 on employees.id = employees_salary.employee_id 
 where employees_salary.monthly_salary < 2000;
 ```
+employee_name|monthly_salary|
+-------------+--------------+
+Elena        |          1500|
+Alex         |          1000|
+Victor       |          1100|
+Anna         |          1400|
+Milana       |          1500|
+Olga         |          1700|
+Sergey       |          1750|
+Vadim        |          1750|
+Anton        |          1850|
+James        |          1850|
+Oliver       |           700|
+David        |          1000|
+Luke         |           900|
+Leo          |          1100|
+Scarlett     |          1200|
+Penelope     |          1600|
+Nora         |          1620|
+*Всего* | *17*
 3. Вывести все зарплатные позиции, но работник по ним не назначен. (ЗП есть, но не понятно кто её получает.)
 ```sh
 select employees_salary.monthly_salary 
