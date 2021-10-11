@@ -254,11 +254,23 @@ and role_name like '%JavaS%'
 ```
 23. Вывести минимальную ЗП QA инженеров
 ```sh
-
+select min(monthly_salary)
+from employees, employees_salary, roles_employees, roles
+where employees_salary.employee_id = employees.id
+and roles_employees.employee_id = employees.id
+and role_id = roles.id
+and role_name like '%QA%'
+;
 ```
 24. Вывести максимальную ЗП QA инженеров
 ```sh
-
+select max(monthly_salary)
+from employees, employees_salary, roles_employees, roles
+where employees_salary.employee_id = employees.id
+and roles_employees.employee_id = employees.id
+and role_id = roles.id
+and role_name like '%QA%'
+;
 ```
 25. Вывести количество QA инженеров
 ```sh
