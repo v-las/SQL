@@ -15,107 +15,111 @@ from employees
 join employees_salary
 on employees.id = employees_salary.employee_id;
 ```
- employee_name | monthly_salary 
----------------|----------------
- Dmitry        |          2,300 
- Elena         |          1,500 
- Alex          |          1,000 
- Victor        |          1,100 
- Elena         |          2,100 
- Anna          |          1,400 
- Milana        |          1,500 
- Olga          |          1,700 
- Sergey        |          1,750 
- Vadim         |          1,750 
- Anton         |          1,850 
- James         |          1,850 
- Luna          |          2,000 
- Aria          |          2,200 
- Valentina     |          2,800 
- Henry         |          4,100 
- Oliver        |            700 
- David         |          1,000 
- Luke          |            900 
- Leo           |          1,100 
- Scarlett      |          1,200 
- Penelope      |          1,600 
- Nora          |          1,620 
- Lily          |          2,350 
+|employee_name|monthly_salary
+|-------------|--------------
+|Dmitry       |          2300
+|Elena        |          1500
+|Alex         |          1000
+|Victor       |          1100
+|Elena        |          2100
+|Anna         |          1400
+|Milana       |          1500
+|Olga         |          1700
+|Sergey       |          1750
+|Vadim        |          1750
+|Anton        |          1850
+|James        |          1850
+|Luna         |          2000
+|Aria         |          2200
+|Valentina    |          2800
+|Henry        |          4100
+|Oliver       |           700
+|David        |          1000
+|Luke         |           900
+|Leo          |          1100
+|Scarlett     |          1200
+|Penelope     |          1600
+|Nora         |          1620
+|Lily         |          2350
 *Всего* | *24*
+
 2. Вывести всех работников у которых ЗП меньше 2000.
 ```sh
 select employee_name, monthly_salary 
 from employees
 join employees_salary
 on employees.id = employees_salary.employee_id 
-where employees_salary.monthly_salary < 2000;
+where monthly_salary < 2000;
 ```
-employee_name|monthly_salary
--------------|--------------
-Elena        |         1,500
-Alex         |         1,000
-Victor       |         1,100
-Anna         |         1,400
-Milana       |         1,500
-Olga         |         1,700
-Sergey       |         1,750
-Vadim        |         1,750
-Anton        |         1,850
-James        |         1,850
-Oliver       |           700
-David        |         1,000
-Luke         |           900
-Leo          |         1,100
-Scarlett     |         1,200
-Penelope     |         1,600
-Nora         |         1,620
+|employee_name|monthly_salary
+|-------------|--------------
+|Elena        |          1500
+|Alex         |          1000
+|Victor       |          1100
+|Anna         |          1400
+|Milana       |          1500
+|Olga         |          1700
+|Sergey       |          1750
+|Vadim        |          1750
+|Anton        |          1850
+|James        |          1850
+|Oliver       |           700
+|David        |          1000
+|Luke         |           900
+|Leo          |          1100
+|Scarlett     |          1200
+|Penelope     |          1600
+|Nora         |          1620
 *Всего* | *17*
+
 3. Вывести все зарплатные позиции, но работник по ним не назначен. (ЗП есть, но не понятно кто её получает.)
 ```sh
-select employees_salary.monthly_salary 
+select employee_name, monthly_salary 
 from employees
 right join employees_salary
 on employees.id = employees_salary.employee_id
-where employees.employee_name is null;
+where employee_name is null;
 ```
-|monthly_salary|
-|--------------|
-|         1,700|
-|         1,700|
-|         2,700|
-|         2,300|
-|         2,300|
-|         1,300|
-|         3,000|
-|         1,500|
-|         1,900|
-|         2,000|
-|         7,000|
-*Всего* *11* | 
+|employee_name|monthly_salary
+|-------------|--------------
+|[NULL]       |          1700
+|[NULL]       |          1700
+|[NULL]       |          2700
+|[NULL]       |          2300
+|[NULL]       |          2300
+|[NULL]       |          1300
+|[NULL]       |          3000
+|[NULL]       |          1500
+|[NULL]       |          1900
+|[NULL]       |          2000
+|[NULL]       |          7000
+*Всего* | *11*
+ 
 4. Вывести все зарплатные позиции  меньше 2000 но работник по ним не назначен. (ЗП есть, но не понятно кто её получает.)
 ```sh
-select employees_salary.monthly_salary 
+select employee_name, monthly_salary 
 from employees
 right join employees_salary
 on employees.id = employees_salary.employee_id
-where employees.employee_name is null
-and employees_salary.monthly_salary < 2000;
+where employee_name is null
+and monthly_salary < 2000;
 ```
-|monthly_salary|
-|--------------|
-|         1,700|
-|         1,700|
-|         1,300|
-|         1,500|
-|         1,900|
-*Всего* *5* | 
+|employee_name|monthly_salary
+|-------------|--------------
+|[NULL]       |          1700
+|[NULL]       |          1700
+|[NULL]       |          1300
+|[NULL]       |          1500
+|[NULL]       |          1900
+*Всего* | *5*
+
 5. Найти всех работников кому не начислена ЗП.
 ```sh
-select employees.employee_name, employees_salary.monthly_salary 
+select employee_name, monthly_salary 
 from employees
 left join employees_salary
 on employees.id = employees_salary.employee_id
-where employees_salary.monthly_salary is null;
+where monthly_salary is null;
 ```
 |employee_name|monthly_salary
 |-------------|--------------
@@ -149,14 +153,15 @@ where employees_salary.monthly_salary is null;
 |Lucas        |        [NULL]
 |Bella        |        [NULL]
 *Всего* | *29*
+
 6. Вывести всех работников с названиями их должности.
 ```sh
 select employee_name, role_name
 from roles_employees
-join employees
+full join employees
 on roles_employees.employee_id = employees.id
-join roles
-on roles_employees.role_id = roles.id;
+left join roles
+on role_id = roles.id;
 ```
 |employee_name|role_name                    
 |-------------|-----------------------------
@@ -200,7 +205,21 @@ on roles_employees.role_id = roles.id;
 |Ellie        |Junior Automation QA engineer
 |Violet       |Middle Automation QA engineer
 |Lucy         |Senior Automation QA engineer
-*Всего* | *40*
+|Eva          |[NULL]                       
+|Alice        |[NULL]                       
+|Milana       |[NULL]                       
+|Samantha     |[NULL]                       
+|Clara        |[NULL]                       
+|Leonardo     |[NULL]                       
+|Dominic      |[NULL]                       
+|Olga         |[NULL]                       
+|Allison      |[NULL]                       
+|Naomi        |[NULL]                       
+|Jordan       |[NULL]                       
+|Valentina    |[NULL]                       
+|Bella        |[NULL]                       
+*Всего* | *53*
+
 7. Вывести имена и должность только Java разработчиков.
 ```sh
 select employee_name, role_name
@@ -208,7 +227,7 @@ from roles_employees
 join employees
 on roles_employees.employee_id = employees.id
 join roles
-on roles_employees.role_id = roles.id
+on role_id = roles.id
 where role_name like '%Java %';
 ```
 |employee_name|role_name            
@@ -221,6 +240,7 @@ where role_name like '%Java %';
 |George       |Senior Java developer
 |Max          |Senior Java developer
 *Всего* | *7*
+
 8. Вывести имена и должность только Python разработчиков.
 ```sh
 select employee_name, role_name
@@ -228,7 +248,7 @@ from roles_employees
 join employees
 on roles_employees.employee_id = employees.id
 join roles
-on roles_employees.role_id = roles.id
+on role_id = roles.id
 where role_name like '%Python %';
 ```
 |employee_name|role_name              
@@ -237,6 +257,7 @@ where role_name like '%Python %';
 |Dmitry       |Senior Python developer
 |Andrey       |Senior Python developer
 *Всего* | *3*
+
 9. Вывести имена и должность всех QA инженеров.
 ```sh
 select employee_name, role_name
@@ -263,6 +284,7 @@ where role_name like '%QA%';
 |Violet       |Middle Automation QA engineer
 |Lucy         |Senior Automation QA engineer
 *Всего* | *13*
+
 10. Вывести имена и должность ручных QA инженеров.
 ```sh
 select employee_name, role_name
@@ -286,6 +308,7 @@ where role_name like '%Manual QA%';
 |Luke         |Senior Manual QA engineer
 |Leo          |Senior Manual QA engineer
 *Всего* | *10*
+
 11. Вывести имена и должность автоматизаторов QA
 ```sh
 select employee_name, role_name
@@ -302,13 +325,14 @@ where role_name like '%Automation QA%';
 |Violet       |Middle Automation QA engineer
 |Lucy         |Senior Automation QA engineer
 *Всего* | *3*
+
 12. Вывести имена и зарплаты Junior специалистов
 ```sh
 select employee_name, monthly_salary
 from employees
-join employees_salary
+full join employees_salary
 on employees_salary.employee_id = employees.id
-join roles_employees
+full join roles_employees
 on roles_employees.employee_id = employees.id
 join roles
 on role_id = roles.id 
@@ -319,16 +343,22 @@ where role_name like '%Junior%';
 |Victor       |          1100
 |Anna         |          1400
 |Vadim        |          1750
+|Anton        |        [NULL]
 |Oliver       |           700
 |James        |          1850
-*Всего* | *5*
+|Lucas        |        [NULL]
+|Jack         |        [NULL]
+|Samuel       |        [NULL]
+|Ellie        |        [NULL]
+*Всего* | *10*
+
 13. Вывести имена и зарплаты Middle специалистов
 ```sh
 select employee_name, monthly_salary
 from employees
-join employees_salary
+full join employees_salary
 on employees_salary.employee_id = employees.id
-join roles_employees
+full join roles_employees
 on roles_employees.employee_id = employees.id
 join roles
 on role_id = roles.id 
@@ -339,15 +369,21 @@ where role_name like '%Middle%';
 |Alex         |          1000
 |Sergey       |          1750
 |Anton        |          1850
+|Victor       |        [NULL]
+|Alexander    |        [NULL]
+|Sophia       |        [NULL]
+|Matthew      |        [NULL]
 |David        |          1000
-*Всего* | *4*
+|Violet       |        [NULL]
+*Всего* | *9*
+
 14. Вывести имена и зарплаты Senior специалистов
 ```sh
 select employee_name, monthly_salary
 from employees
-join employees_salary
+full join employees_salary
 on employees_salary.employee_id = employees.id
-join roles_employees
+full join roles_employees
 on roles_employees.employee_id = employees.id
 join roles
 on role_id = roles.id 
@@ -356,10 +392,18 @@ where role_name like '%Senior%';
 |employee_name|monthly_salary
 |-------------|--------------
 |Elena        |          2100
+|Erik         |        [NULL]
 |Dmitry       |          2300
+|Andrey       |        [NULL]
+|George       |        [NULL]
+|Max          |        [NULL]
+|Maya         |        [NULL]
+|Jacob        |        [NULL]
 |Luke         |           900
 |Leo          |          1100
-*Всего* | *4*
+|Lucy         |        [NULL]
+*Всего* | *11*
+
 15. Вывести зарплаты Java разработчиков
 ```sh
 select monthly_salary, role_name
@@ -378,6 +422,7 @@ where role_name like '%Java %';
 |          2100|Senior Java developer
 |          1750|Middle Java developer
 *Всего* | *3*
+
 16. Вывести зарплаты Python разработчиков
 ```sh
 select monthly_salary, role_name
@@ -395,6 +440,7 @@ where role_name like '%Python%';
 |          1000|Middle Python developer
 |          2300|Senior Python developer
 *Всего* | *2*
+
 17. Вывести имена и зарплаты Junior Python разработчиков
 ```sh
 select employee_name, monthly_salary
@@ -411,6 +457,7 @@ where role_name like '%Junior Python%';
 |-------------|--------------
 |[NULL]       |        [NULL]
 *Всего* | *1*
+
 18. Вывести имена и зарплаты Middle JS разработчиков
 ```sh
 select employee_name, monthly_salary
@@ -428,6 +475,7 @@ where role_name like '%Middle JavaS%';
 |Alexander    |        [NULL]
 |Sophia       |        [NULL]
 *Всего* | *2*
+
 19. Вывести имена и зарплаты Senior Java разработчиков
 ```sh
 select employee_name, monthly_salary
@@ -448,6 +496,7 @@ where role_name like '%Senior%' and role_name like'%Java%';
 |Maya         |        [NULL]
 |Jacob        |        [NULL]
 *Всего* | *5*
+
 20. Вывести зарплаты Junior QA инженеров
 ```sh
 select monthly_salary
@@ -465,6 +514,7 @@ where role_name like '%Junior%' and role_name like'%QA%';
 |          1400|
 |          1750|
 *Всего* *2* | 
+
 21. Вывести среднюю зарплату всех Junior специалистов
 ```sh
 select avg(monthly_salary)
@@ -481,6 +531,7 @@ where role_name like '%Junior%';
 |---------------------|
 |1360.0000000000000000|
 *Всего* *1* | 
+
 22. Вывести сумму зарплат JS разработчиков
 ```sh
 select sum(monthly_salary)
@@ -494,6 +545,7 @@ and role_name like '%JavaS%';
 |------|
 |  2550|
 *Всего* *1* | 
+
 23. Вывести минимальную ЗП QA инженеров
 ```sh
 select min(monthly_salary)
@@ -507,6 +559,7 @@ and role_name like '%QA%';
 |------|
 |   900|
 *Всего* *1* | 
+
 24. Вывести максимальную ЗП QA инженеров
 ```sh
 select max(monthly_salary)
@@ -520,6 +573,7 @@ and role_name like '%QA%';
 |------|
 |  1850|
 *Всего* *1* | 
+
 25. Вывести количество QA инженеров
 ```sh
 select count(employee_name)
@@ -536,6 +590,7 @@ where role_name like '%QA%';
 |------|
 |    13|
 *Всего* *1* | 
+
 26. Вывести количество Middle специалистов.
 ```sh
 select count(employee_name)
@@ -552,6 +607,7 @@ where role_name like '%Middle%';
 |------|
 |     9|
 *Всего* *1* | 
+
 27. Вывести количество разработчиков
 ```sh
 select count(employee_name)
@@ -568,6 +624,7 @@ where role_name like '%developer%';
 |------|
 |    17|
 *Всего* *1* | 
+
 28. Вывести фонд (сумму) зарплаты разработчиков.
 ```sh
 select sum(monthly_salary)
@@ -584,6 +641,7 @@ where role_name like '%developer%';
 |------|
 | 10800|
 *Всего* *1* |
+
 29. Вывести имена, должности и ЗП всех специалистов по возрастанию
 ```sh
 select employee_name, role_name, monthly_salary
@@ -652,6 +710,7 @@ order by employee_name;
  Victor        | Middle Java developer         |         [NULL] 
  Violet        | Middle Automation QA engineer |         [NULL] 
 *Всего* | *53*
+
 30. Вывести имена, должности и ЗП всех специалистов по возрастанию у специалистов у которых ЗП от 1700 до 2300
 ```sh
 select employee_name, role_name, monthly_salary
@@ -665,18 +724,19 @@ on role_id = roles.id
 where monthly_salary between 1700 and 2300
 order by monthly_salary;
 ```
- employee_name | role_name                   | monthly_salary 
----------------|-----------------------------|----------------
- Anton         | Middle Manual QA engineer   |          1,850 
- Aria          | Designer                    |          2,200 
- Dmitry        | Senior Python developer     |          2,300 
- Elena         | Senior Java developer       |          2,100 
- James         | Junior JavaScript developer |          1,850 
- Luna          | Designer                    |          2,000 
- Olga          | [NULL]                      |          1,700 
- Sergey        | Middle Java developer       |          1,750 
- Vadim         | Junior Manual QA engineer   |          1,750 
+|employee_name|role_name                  |monthly_salary
+|-------------|---------------------------|--------------
+|Olga         |[NULL]                     |          1700
+|Sergey       |Middle Java developer      |          1750
+|Vadim        |Junior Manual QA engineer  |          1750
+|Anton        |Middle Manual QA engineer  |          1850
+|James        |Junior JavaScript developer|          1850
+|Luna         |Designer                   |          2000
+|Elena        |Senior Java developer      |          2100
+|Aria         |Designer                   |          2200
+|Dmitry       |Senior Python developer    |          2300 
 *Всего* | *9*
+
 31. Вывести имена, должности и ЗП всех специалистов по возрастанию у специалистов у которых ЗП меньше 2300
 ```sh
 select employee_name, role_name, monthly_salary
@@ -713,6 +773,7 @@ order by monthly_salary;
  Elena         | Senior Java developer       |          2,100 
  Aria          | Designer                    |          2,200 
 *Всего* | *20*
+
 32. Вывести имена, должности и ЗП всех специалистов по возрастанию у специалистов у которых ЗП равна 1100, 1500, 2000
 ```sh
 select employee_name, role_name, monthly_salary
