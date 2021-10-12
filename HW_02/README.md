@@ -493,7 +493,7 @@ where role_name like '%Senior%' and role_name like'%Java %';
 |Elena        |          2100
 |George       |        [NULL]
 |Max          |        [NULL]
-*Всего* | *5*
+*Всего* | *3*
 
 20. Вывести зарплаты Junior QA инженеров
 ```sh
