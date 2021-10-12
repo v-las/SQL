@@ -172,7 +172,7 @@ full join roles_employees
 on roles_employees.employee_id = employees.id
 full join roles
 on role_id = roles.id
-where role_name like '%Senior%' and role_name like'%Java%';
+where role_name like '%Senior%' and role_name like'%Java %';
 
 -- 20
 select monthly_salary
