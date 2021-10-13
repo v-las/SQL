@@ -1,4 +1,4 @@
-﻿### SQL HomeWork 3. SDL
+﻿### SQL HomeWork 3. DDL
 #### Relations
 
 1.

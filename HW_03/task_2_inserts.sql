@@ -1,0 +1,86 @@
+--2. Заполните таблицы данными. Не менее 10 строк в каждой таблице
+
+--Заполнение "salary"
+--INSERT INTO	salary (id, monthly_salary) VALUES (DEFAULT, 300);
+--INSERT INTO	salary (id, monthly_salary) VALUES (DEFAULT, 450);
+--INSERT INTO	salary (id, monthly_salary) VALUES (DEFAULT, 600);
+--INSERT INTO	salary (id, monthly_salary) VALUES (DEFAULT, 750);
+--INSERT INTO	salary (id, monthly_salary) VALUES (DEFAULT, 900);
+--INSERT INTO	salary (id, monthly_salary) VALUES (DEFAULT, 1100);
+--INSERT INTO	salary (id, monthly_salary) VALUES (DEFAULT, 1450);
+--INSERT INTO	salary (id, monthly_salary) VALUES (DEFAULT, 1700);
+--INSERT INTO	salary (id, monthly_salary) VALUES (DEFAULT, 2000);
+--INSERT INTO	salary (id, monthly_salary) VALUES (DEFAULT, 2500);
+--SELECT * FROM salary;
+
+--Заполнение "roles"
+--INSERT INTO roles (id, role_title) VALUES (DEFAULT, 'Area Manager');
+--INSERT INTO roles (id, role_title) VALUES (DEFAULT, 'Store Manager');
+--INSERT INTO roles (id, role_title) VALUES (DEFAULT, 'Deputy Managers');
+--INSERT INTO roles (id, role_title) VALUES (DEFAULT, 'Team Leader');
+--INSERT INTO roles (id, role_title) VALUES (DEFAULT, 'Retail Assistant');
+--INSERT INTO roles (id, role_title) VALUES (DEFAULT, 'Night Replenishment Assistant');
+--INSERT INTO roles (id, role_title) VALUES (DEFAULT, 'Cleaner');
+--INSERT INTO roles (id, role_title) VALUES (DEFAULT, 'Apprentice');
+--INSERT INTO roles (id, role_title) VALUES (DEFAULT, 'Supervisor');
+--INSERT INTO roles (id, role_title) VALUES (DEFAULT, 'HR');
+--SELECT * FROM roles;
+
+--Заполнение "roles_salary"
+--INSERT INTO roles_salary (id, id_role, id_salary) VALUES (DEFAULT, 1, 10);
+--INSERT INTO roles_salary (id, id_role, id_salary) VALUES (DEFAULT, 2, 9);
+--INSERT INTO roles_salary (id, id_role, id_salary) VALUES (DEFAULT, 3, 8);
+--INSERT INTO roles_salary (id, id_role, id_salary) VALUES (DEFAULT, 10, 7);
+--INSERT INTO roles_salary (id, id_role, id_salary) VALUES (DEFAULT, 9, 6);
+--INSERT INTO roles_salary (id, id_role, id_salary) VALUES (DEFAULT, 6, 3);
+--INSERT INTO roles_salary (id, id_role, id_salary) VALUES (DEFAULT, 7, 2);
+--INSERT INTO roles_salary (id, id_role, id_salary) VALUES (DEFAULT, 8, 1);
+--INSERT INTO roles_salary (id, id_role, id_salary) VALUES (DEFAULT, 4, 5);
+--INSERT INTO roles_salary (id, id_role, id_salary) VALUES (DEFAULT, 5, 4);
+--SELECT * FROM roles_salary;
+
+--Заполнение "employees"
+--INSERT INTO employees (id, employee_name) VALUES (DEFAULT, 'John Wick');
+--INSERT INTO employees (id, employee_name) VALUES (DEFAULT, 'James Bond');
+--INSERT INTO employees (id, employee_name) VALUES (DEFAULT, 'Walter White');
+--INSERT INTO employees (id, employee_name) VALUES (DEFAULT, 'Mata Chary');
+--INSERT INTO employees (id, employee_name) VALUES (DEFAULT, 'Brandon Fraiser');
+--INSERT INTO employees (id, employee_name) VALUES (DEFAULT, 'Alissya Keys');
+--INSERT INTO employees (id, employee_name) VALUES (DEFAULT, 'Zoe Krawitz');
+--INSERT INTO employees (id, employee_name) VALUES (DEFAULT, 'Lenny Krawitz');
+--INSERT INTO employees (id, employee_name) VALUES (DEFAULT, 'Christian Bale');
+--INSERT INTO employees (id, employee_name) VALUES (DEFAULT, 'Vinona Rider');
+--INSERT INTO employees (id, employee_name) VALUES (DEFAULT, 'Jonah Hill');
+--INSERT INTO employees (id, employee_name) VALUES (DEFAULT, 'Mangomery Burnes');
+--INSERT INTO employees (id, employee_name) VALUES (DEFAULT, 'Morgan Freeman');
+--INSERT INTO employees (id, employee_name) VALUES (DEFAULT, 'Nicola Tesla');
+--INSERT INTO employees (id, employee_name) VALUES (DEFAULT, 'Niel DeGrasse Tyson');
+--INSERT INTO employees (id, employee_name) VALUES (DEFAULT, 'Smash N. Pumpkins');
+--INSERT INTO employees (id, employee_name) VALUES (DEFAULT, 'Harry Potter');
+--INSERT INTO employees (id, employee_name) VALUES (DEFAULT, 'Lonardo DiCaprio');
+--INSERT INTO employees (id, employee_name) VALUES (DEFAULT, 'Mona Lisa');
+--INSERT INTO employees (id, employee_name) VALUES (DEFAULT, 'Elon Must');
+--SELECT * FROM employees;
+
+--Заполнение "employees"
+--INSERT INTO employees (id, employee_name) VALUES (DEFAULT, 'John Wick');
+--INSERT INTO employees (id, employee_name) VALUES (DEFAULT, 'James Bond');
+--INSERT INTO employees (id, employee_name) VALUES (DEFAULT, 'Walter White');
+--INSERT INTO employees (id, employee_name) VALUES (DEFAULT, 'Mata Chary');
+--INSERT INTO employees (id, employee_name) VALUES (DEFAULT, 'Brandon Fraiser');
+--INSERT INTO employees (id, employee_name) VALUES (DEFAULT, 'Alissya Keys');
+--INSERT INTO employees (id, employee_name) VALUES (DEFAULT, 'Zoe Krawitz');
+--INSERT INTO employees (id, employee_name) VALUES (DEFAULT, 'Lenny Krawitz');
+--INSERT INTO employees (id, employee_name) VALUES (DEFAULT, 'Christian Bale');
+--INSERT INTO employees (id, employee_name) VALUES (DEFAULT, 'Vinona Rider');
+--INSERT INTO employees (id, employee_name) VALUES (DEFAULT, 'Jonah Hill');
+--INSERT INTO employees (id, employee_name) VALUES (DEFAULT, 'Mangomery Burnes');
+--INSERT INTO employees (id, employee_name) VALUES (DEFAULT, 'Morgan Freeman');
+--INSERT INTO employees (id, employee_name) VALUES (DEFAULT, 'Nicola Tesla');
+--INSERT INTO employees (id, employee_name) VALUES (DEFAULT, 'Niel DeGrasse Tyson');
+--INSERT INTO employees (id, employee_name) VALUES (DEFAULT, 'Smash N. Pumpkins');
+--INSERT INTO employees (id, employee_name) VALUES (DEFAULT, 'Harry Potter');
+--INSERT INTO employees (id, employee_name) VALUES (DEFAULT, 'Lonardo DiCaprio');
+--INSERT INTO employees (id, employee_name) VALUES (DEFAULT, 'Mona Lisa');
+--INSERT INTO employees (id, employee_name) VALUES (DEFAULT, 'Elon Must');
+--SELECT * FROM employees;
