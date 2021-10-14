@@ -144,6 +144,29 @@ INSERT INTO claim (id, service_id, employee_id, material_id, claim_date, sales_m
 	VALUES (DEFAULT, 10, 1, 2, CURRENT_TIMESTAMP, 20);
 --SELECT * FROM claim;
 
+--4. Добавить 10 строк поставщиков в таблицу Suppliers
+INSERT INTO suppliers (id, supplier_name)
+	VALUES (DEFAULT, 'LTD');
+INSERT INTO suppliers (id, supplier_name)
+	VALUES (DEFAULT, 'INC');
+INSERT INTO suppliers (id, supplier_name)
+	VALUES (DEFAULT, 'OOO');
+INSERT INTO suppliers (id, supplier_name)
+	VALUES (DEFAULT, 'OAO');
+INSERT INTO suppliers (id, supplier_name)
+	VALUES (DEFAULT, 'ZAO');
+INSERT INTO suppliers (id, supplier_name)
+	VALUES (DEFAULT, 'IP');
+INSERT INTO suppliers (id, supplier_name)
+	VALUES (DEFAULT, 'FOP');
+INSERT INTO suppliers (id, supplier_name)
+	VALUES (DEFAULT, 'HKO');
+INSERT INTO suppliers (id, supplier_name)
+	VALUES (DEFAULT, 'ANO');
+INSERT INTO suppliers (id, supplier_name)
+	VALUES (DEFAULT, 'MFC');
+--SELECT * FROM suppliers;
+
 --CREATE TABLE claim (
 --	id serial PRIMARY KEY,
 --	service_id int NOT NULL,
