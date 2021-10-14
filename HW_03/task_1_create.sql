@@ -90,3 +90,8 @@ ALTER TABLE materials
 --6. Обновить таблицу employees. Добавить varchar поле surname на 50 символов.
 ALTER TABLE employees 
 	ADD COLUMN surname varchar (50);
+
+--7. Обновить таблицу salary. Добавить varchar поле currency на 7 символов.
+ALTER TABLE salary 
+	ADD COLUMN currency varchar (7);
+	
