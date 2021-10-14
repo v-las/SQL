@@ -1,6 +1,6 @@
--- 1. Создайте базу из представленной картинки.
--- У каждой таблицы должно быть поле id
--- id автоинкрементальный и является первичным ключом
+--РЎРѕР·РґР°Р№С‚Рµ Р±Р°Р·Сѓ РёР· РїСЂРµРґСЃС‚Р°РІР»РµРЅРЅРѕР№ РєР°СЂС‚РёРЅРєРё.
+--РЈ РєР°Р¶РґРѕР№ С‚Р°Р±Р»РёС†С‹ РґРѕР»Р¶РЅРѕ Р±С‹С‚СЊ РїРѕР»Рµ id
+--id Р°РІС‚РѕРёРЅРєСЂРµРјРµРЅС‚Р°Р»СЊРЅС‹Р№ Рё СЏРІР»СЏРµС‚СЃСЏ РїРµСЂРІРёС‡РЅС‹Рј РєР»СЋС‡РѕРј
 CREATE TABLE salary (
 	id serial PRIMARY KEY,
 	monthly_salary int NOT NULL
@@ -66,23 +66,23 @@ CREATE TABLE claim (
 		REFERENCES employees (id)
 );
 
---3. Добавить таблицу suppliers с полями id, name
+--3. Р”РѕР±Р°РІРёС‚СЊ С‚Р°Р±Р»РёС†Сѓ Suppliers СЃ РїРѕР»СЏРјРё id, name
 CREATE TABLE suppliers (
 	id serial PRIMARY KEY,
 	supplier_name varchar (50) UNIQUE NOT NULL
 );
 
---5. Обновить таблицу Materials. Добавить поле supplier_id которое связано с полем id в таблице suppliers
+--5. РћР±РЅРѕРІРёС‚СЊ С‚Р°Р±Р»РёС†Сѓ Materials. Р”РѕР±Р°РІРёС‚СЊ РїРѕР»Рµ suplier_id РєРѕС‚РѕСЂРѕРµ СЃРІСЏР·Р°РЅРѕ СЃ РїРѕР»РµРј id РІ С‚Р°Р±Р»РёС†Рµ Suppliers
 ALTER TABLE materials 
 	ADD COLUMN supplier_id int,
 	ADD FOREIGN KEY (supplier_id)
 		REFERENCES suppliers (id);
 	
---6. Обновить таблицу employees. Добавить varchar поле surname на 50 символов.
+--6. РћР±РЅРѕРІРёС‚СЊ С‚Р°Р±Р»РёС†Сѓ Employees. Р”РѕР±Р°РІРёС‚СЊ varchar РїРѕР»Рµ surname РЅР° 50 СЃРёРјРІРѕР»РѕРІ.
 ALTER TABLE employees 
 	ADD COLUMN surname varchar (50);
 
---7. Обновить таблицу salary. Добавить varchar поле currency на 7 символов.
+--7. РћР±РЅРѕРІРёС‚СЊ С‚Р°Р±Р»РёС†Сѓ Salary. Р”РѕР±Р°РІРёС‚СЊ varchar РїРѕР»Рµ currency РЅР° 7 СЃРёРјРІРѕР»РѕРІ.
 ALTER TABLE salary 
 	ADD COLUMN currency varchar (7);
 	
