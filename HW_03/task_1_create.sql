@@ -1,18 +1,20 @@
 -- 1. Создайте базу из представленной картинки.
 -- У каждой таблицы должно быть поле id
 -- id автоинкрементальный и является первичным ключом
-
-CREATE TABLE salary (
+CREATE TABLE salary 
+(
 	id serial PRIMARY KEY,
 	monthly_salary int NOT NULL
 );
 
-CREATE TABLE roles (
+CREATE TABLE roles 
+(
 	id serial PRIMARY KEY,
 	role_title varchar (50) UNIQUE NOT NULL
 );
 
-CREATE TABLE roles_salary (
+CREATE TABLE roles_salary 
+(
 	id serial PRIMARY KEY,
 	id_role int NOT NULL,
 	id_salary int NOT NULL,
@@ -22,12 +24,14 @@ CREATE TABLE roles_salary (
 		REFERENCES salary (id)
 );
 
-CREATE TABLE employees (
+CREATE TABLE employees 
+(
 	id serial PRIMARY KEY,
 	employee_name varchar (50) NOT NULL
 );
 
-CREATE TABLE employees_roles (
+CREATE TABLE employees_roles 
+(
 	id serial PRIMARY KEY,
 	id_role int NOT NULL,
 	id_employee int NOT NULL,
@@ -37,20 +41,23 @@ CREATE TABLE employees_roles (
 		REFERENCES employees (id)
 );
 
-CREATE TABLE service (
+CREATE TABLE service 
+(
 	id serial PRIMARY KEY,
 	service_title varchar (50) UNIQUE NOT NULL,
 	price int NOT NULL
 );
 
-CREATE TABLE materials (
+CREATE TABLE materials 
+(
 	id serial PRIMARY KEY,
 	material_title varchar (50) UNIQUE NOT NULL,
 	amount int NOT NULL,
 	price int NOT NULL
 );
 
-CREATE TABLE claim (
+CREATE TABLE claim 
+(
 	id serial PRIMARY KEY,
 	service_id int NOT NULL,
 	employee_id int NOT NULL,
@@ -65,4 +72,11 @@ CREATE TABLE claim (
 		REFERENCES materials (id),
 	FOREIGN KEY (sales_manager)
 		REFERENCES employees (id)
+);
+
+--3. Добавить таблицу Suppliers с полями id, name
+CREATE TABLE suppliers
+(
+	id serial PRIMARY KEY,
+	supplier_name varchar (50) UNIQUE NOT NULL
 );

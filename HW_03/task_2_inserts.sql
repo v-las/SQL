@@ -142,7 +142,7 @@ INSERT INTO claim (id, service_id, employee_id, material_id, claim_date, sales_m
 	VALUES (DEFAULT, 9, 10, 1, CURRENT_TIMESTAMP, 19);
 INSERT INTO claim (id, service_id, employee_id, material_id, claim_date, sales_manager)
 	VALUES (DEFAULT, 10, 1, 2, CURRENT_TIMESTAMP, 20);
-SELECT * FROM claim;
+--SELECT * FROM claim;
 
 --CREATE TABLE claim (
 --	id serial PRIMARY KEY,
@@ -161,22 +161,21 @@ SELECT * FROM claim;
 --		REFERENCES employees (id)
 --);
 
-SELECT *
-	FROM claim
-	JOIN service
-		ON service_id = service.id
-	JOIN employees
-		ON employee_id = employees.id 
-			OR employee_id = sales_manager
-	JOIN materials
-		ON material_id = materials.id
-	JOIN employees_roles er
-		ON id_employee = employees.id
-	JOIN roles r 
-		ON r.id = er.id_role
+SELECT monthly_salary, role_title, employee_name, service_title, s2.price, material_title, amount, m.price
+	FROM salary s
 	JOIN roles_salary rs 
-		ON rs.id_role = r.id
-	JOIN salary s 
-		ON s.id = id_salary;
-	
+		ON s.id = id_salary
+	JOIN roles r 
+		ON r.id = rs.id_role 
+	JOIN employees_roles er 
+		ON r.id = er.id_role 
+	JOIN employees e 
+		ON e.id = id_employee
+	JOIN claim c 
+		ON e.id = employee_id
+			OR e.id = sales_manager
+	JOIN service s2 
+		ON s2.id = service_id
+	JOIN materials m 
+		ON m.id = material_id
 	
