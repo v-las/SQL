@@ -167,23 +167,6 @@ INSERT INTO suppliers (id, supplier_name)
 	VALUES (DEFAULT, 'MFC');
 --SELECT * FROM suppliers;
 
---CREATE TABLE claim (
---	id serial PRIMARY KEY,
---	service_id int NOT NULL,
---	employee_id int NOT NULL,
---	material_id int NOT NULL,
---	claim_date date NOT NULL,
---	sales_manager int NOT NULL,
---	FOREIGN KEY (service_id)
---		REFERENCES service (id),
---	FOREIGN KEY (employee_id)
---		REFERENCES employees (id),
---	FOREIGN KEY (material_id)
---		REFERENCES materials (id),
---	FOREIGN KEY (sales_manager)
---		REFERENCES employees (id)
---);
-
 SELECT monthly_salary, role_title, employee_name, service_title, s2.price, material_title, amount, m.price
 	FROM salary s
 	JOIN roles_salary rs 

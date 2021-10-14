@@ -74,9 +74,15 @@ CREATE TABLE claim
 		REFERENCES employees (id)
 );
 
---3. Добавить таблицу Suppliers с полями id, name
+--3. Добавить таблицу suppliers с полями id, name
 CREATE TABLE suppliers
 (
 	id serial PRIMARY KEY,
 	supplier_name varchar (50) UNIQUE NOT NULL
 );
+
+--5. Обновить таблицу Materials. Добавить поле supplier_id которое связано с полем id в таблице suppliers
+ALTER TABLE materials 
+	ADD COLUMN supplier_id int NOT NULL,
+	ADD FOREIGN KEY (supplier_id)
+		REFERENCES suppliers (id);
