@@ -167,21 +167,21 @@ INSERT INTO suppliers (id, supplier_name)
 	VALUES (DEFAULT, 'MFC');
 --SELECT * FROM suppliers;
 
-SELECT monthly_salary, role_title, employee_name, service_title, s2.price, material_title, amount, m.price
-	FROM salary s
-	JOIN roles_salary rs 
-		ON s.id = id_salary
-	JOIN roles r 
-		ON r.id = rs.id_role 
-	JOIN employees_roles er 
-		ON r.id = er.id_role 
-	JOIN employees e 
-		ON e.id = id_employee
-	JOIN claim c 
-		ON e.id = employee_id
-			OR e.id = sales_manager
-	JOIN service s2 
-		ON s2.id = service_id
-	JOIN materials m 
-		ON m.id = material_id
+--SELECT monthly_salary, role_title, employee_name, service_title, s2.price, material_title, amount, m.price
+--	FROM salary s
+--	JOIN roles_salary rs 
+--		ON s.id = id_salary
+--	JOIN roles r 
+--		ON r.id = rs.id_role 
+--	JOIN employees_roles er 
+--		ON r.id = er.id_role 
+--	JOIN employees e 
+--		ON e.id = id_employee
+--	JOIN claim c 
+--		ON e.id = employee_id
+--			OR e.id = sales_manager
+--	JOIN service s2 
+--		ON s2.id = service_id
+--	JOIN materials m 
+--		ON m.id = material_id
 	
