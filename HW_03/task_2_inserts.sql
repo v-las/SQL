@@ -1,6 +1,6 @@
---2. Заполните таблицы данными. Не менее 10 строк в каждой таблице
+--Р—Р°РїРѕР»РЅРёС‚Рµ С‚Р°Р±Р»РёС†С‹ РґР°РЅРЅС‹РјРё. РќРµ РјРµРЅРµРµ 10 СЃС‚СЂРѕРє РІ РєР°Р¶РґРѕР№ С‚Р°Р±Р»РёС†Рµ
 
---Заполнение "salary"
+--Р—Р°РїРѕР»РЅРµРЅРёРµ "salary"
 INSERT INTO	salary (id, monthly_salary) VALUES (DEFAULT, 300);
 INSERT INTO	salary (id, monthly_salary) VALUES (DEFAULT, 450);
 INSERT INTO	salary (id, monthly_salary) VALUES (DEFAULT, 600);
@@ -13,7 +13,7 @@ INSERT INTO	salary (id, monthly_salary) VALUES (DEFAULT, 2000);
 INSERT INTO	salary (id, monthly_salary) VALUES (DEFAULT, 2500);
 --SELECT * FROM salary;
 
---Заполнение "roles"
+--Р—Р°РїРѕР»РЅРµРЅРёРµ "roles"
 INSERT INTO roles (id, role_title) VALUES (DEFAULT, 'Area Manager');
 INSERT INTO roles (id, role_title) VALUES (DEFAULT, 'Store Manager');
 INSERT INTO roles (id, role_title) VALUES (DEFAULT, 'Deputy Manager');
@@ -26,7 +26,7 @@ INSERT INTO roles (id, role_title) VALUES (DEFAULT, 'Supervisor');
 INSERT INTO roles (id, role_title) VALUES (DEFAULT, 'HR');
 --SELECT * FROM roles;
 
---Заполнение "roles_salary"
+--Р—Р°РїРѕР»РЅРµРЅРёРµ "roles_salary"
 INSERT INTO roles_salary (id, id_role, id_salary) VALUES (DEFAULT, 1, 10);
 INSERT INTO roles_salary (id, id_role, id_salary) VALUES (DEFAULT, 2, 9);
 INSERT INTO roles_salary (id, id_role, id_salary) VALUES (DEFAULT, 3, 8);
@@ -39,7 +39,7 @@ INSERT INTO roles_salary (id, id_role, id_salary) VALUES (DEFAULT, 4, 5);
 INSERT INTO roles_salary (id, id_role, id_salary) VALUES (DEFAULT, 5, 4);
 --SELECT * FROM roles_salary;
 
---Заполнение "employees"
+--Р—Р°РїРѕР»РЅРµРЅРёРµ "employees"
 INSERT INTO employees (id, employee_name) VALUES (DEFAULT, 'John Wich');
 INSERT INTO employees (id, employee_name) VALUES (DEFAULT, 'James Bomd');
 INSERT INTO employees (id, employee_name) VALUES (DEFAULT, 'Walter Whike');
@@ -62,7 +62,7 @@ INSERT INTO employees (id, employee_name) VALUES (DEFAULT, 'Mona Lida');
 INSERT INTO employees (id, employee_name) VALUES (DEFAULT, 'Elon Must');
 --SELECT * FROM employees;
 
---Заполнение "employees_roles"
+--Р—Р°РїРѕР»РЅРµРЅРёРµ "employees_roles"
 INSERT INTO employees_roles (id, id_role, id_employee) VALUES (DEFAULT, 1, 17);
 INSERT INTO employees_roles (id, id_role, id_employee) VALUES (DEFAULT, 2, 13);
 INSERT INTO employees_roles (id, id_role, id_employee) VALUES (DEFAULT, 2, 16);
@@ -85,7 +85,7 @@ INSERT INTO employees_roles (id, id_role, id_employee) VALUES (DEFAULT, 7, 10);
 INSERT INTO employees_roles (id, id_role, id_employee) VALUES (DEFAULT, 7, 3);
 --SELECT * FROM employees_roles;
 
---Заполнение "service"
+--Р—Р°РїРѕР»РЅРµРЅРёРµ "service"
 INSERT INTO service (id, service_title, price) VALUES (DEFAULT, 'Desktop App', 30000);
 INSERT INTO service (id, service_title, price) VALUES (DEFAULT, 'Web App', 70000);
 INSERT INTO service (id, service_title, price) VALUES (DEFAULT, 'Mobile App', 90000);
@@ -98,7 +98,7 @@ INSERT INTO service (id, service_title, price) VALUES (DEFAULT, 'Social Media', 
 INSERT INTO service (id, service_title, price) VALUES (DEFAULT, 'Calculator', 3400);
 --SELECT * FROM service;
 
---Заполнение "materials"
+--Р—Р°РїРѕР»РЅРµРЅРёРµ "materials"
 INSERT INTO materials (id, material_title, amount, price)
 	VALUES (DEFAULT, 'Wood', 10, 300);
 INSERT INTO materials (id, material_title, amount, price)
@@ -121,7 +121,7 @@ INSERT INTO materials (id, material_title, amount, price)
 	VALUES (DEFAULT, 'Rubber', 70, 500);
 --SELECT * FROM materials;
 
---Заполнение "claim"
+--Р—Р°РїРѕР»РЅРµРЅРёРµ "claim"
 INSERT INTO claim (id, service_id, employee_id, material_id, claim_date, sales_manager)
 	VALUES (DEFAULT, 1, 2, 3, CURRENT_TIMESTAMP, 11);
 INSERT INTO claim (id, service_id, employee_id, material_id, claim_date, sales_manager)
@@ -144,7 +144,7 @@ INSERT INTO claim (id, service_id, employee_id, material_id, claim_date, sales_m
 	VALUES (DEFAULT, 10, 1, 2, CURRENT_TIMESTAMP, 20);
 --SELECT * FROM claim;
 
---4. Добавить 10 строк поставщиков в таблицу Suppliers
+--4. Р”РѕР±Р°РІРёС‚СЊ 10 СЃС‚СЂРѕРє РїРѕСЃС‚Р°РІС‰РёРєРѕРІ РІ С‚Р°Р±Р»РёС†Сѓ Suppliers
 INSERT INTO suppliers (id, supplier_name)
 	VALUES (DEFAULT, 'LTD');
 INSERT INTO suppliers (id, supplier_name)
