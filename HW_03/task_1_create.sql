@@ -83,6 +83,10 @@ CREATE TABLE suppliers
 
 --5. Обновить таблицу Materials. Добавить поле supplier_id которое связано с полем id в таблице suppliers
 ALTER TABLE materials 
-	ADD COLUMN supplier_id int NOT NULL,
+	ADD COLUMN supplier_id int,
 	ADD FOREIGN KEY (supplier_id)
 		REFERENCES suppliers (id);
+	
+--6. Обновить таблицу employees. Добавить varchar поле surname на 50 символов.
+ALTER TABLE employees 
+	ADD COLUMN surname varchar (50);
