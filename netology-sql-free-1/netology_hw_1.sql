@@ -36,7 +36,7 @@ SELECT c.category, count(p.product_id)
 --			FROM 
 --	)	
 	GROUP BY c.category
-	HAVING 
+--	HAVING 
 	ORDER BY count(p.product_id) DESC 
 	
 --—колько У„ерепахФ купила Williams Linda?

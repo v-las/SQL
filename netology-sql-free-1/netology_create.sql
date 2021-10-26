@@ -1,4 +1,4 @@
-DROP TABLE delivery;
+--DROP TABLE delivery;
 
 CREATE TABLE delivery (
 	delivery_id serial PRIMARY KEY,
@@ -17,7 +17,8 @@ CREATE TABLE delivery (
 		DEFAULT FALSE
 );
 
---ALTER TABLE orders (
---	delivery_id
---		REFERENCES delivery (delivery_id)
---);
+ALTER TABLE orders 
+	ADD CONSTRAINT delivery_orders_fkey 
+		FOREIGN KEY (delivery_id)
+			REFERENCES delivery (delivery_id);
+
